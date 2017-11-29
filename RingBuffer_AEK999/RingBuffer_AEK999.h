@@ -5,7 +5,8 @@ class CRingBuffer
 public:
 	enum e_Size
 	{
-		DEFAULT_SIZE = 1000
+		DEFAULT_SIZE = 1000,
+		TEST_SIZE = 10
 	};
 
 	CRingBuffer(void);
@@ -67,10 +68,10 @@ public:
 	// 원하는 길이만큼 읽기위치 에서 삭제 / 쓰기 위치 이동
 	//
 	// Parameters: 없음.
-	// Return: 없음.
+	// Return: (int)움직인 크기
 	/////////////////////////////////////////////////////////////////////////
-	void RemoveData(int iSize);
-	int	MoveWritePos(int iSize);
+	int MoveFrontPos(int iSize);
+	int	MoveRearPos(int iSize);
 
 	/////////////////////////////////////////////////////////////////////////
 	// 버퍼의 모든 데이타 삭제.
@@ -94,7 +95,7 @@ public:
 	// Parameters: 없음.
 	// Return: (char *) 버퍼 포인터.
 	/////////////////////////////////////////////////////////////////////////
-	char *GetReadBufferPtr(void);
+	char *GetFrontBufferPtr(void);
 
 	/////////////////////////////////////////////////////////////////////////
 	// 버퍼의 WritePos 포인터 얻음.
@@ -102,7 +103,7 @@ public:
 	// Parameters: 없음.
 	// Return: (char *) 버퍼 포인터.
 	/////////////////////////////////////////////////////////////////////////
-	char *GetWriteBufferPtr(void);
+	char *GetRearBufferPtr(void);
 
 private:
 	void Initial(int iBufferSize);
