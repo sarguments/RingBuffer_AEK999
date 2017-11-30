@@ -6,7 +6,7 @@ public:
 	enum e_Size
 	{
 		DEFAULT_SIZE = 1000,
-		TEST_SIZE = 1000
+		TEST_SIZE = 5000
 	};
 
 	CRingBuffer(void);
