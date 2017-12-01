@@ -29,7 +29,7 @@ public:
 	static bool DomainToIP(WCHAR* szDomain, IN_ADDR* pAddr);
 	static bool SetNonBlock(SOCKET sock, bool bParam);
 	static bool SetBroadCast(SOCKET sock, bool bParam);
-	
+
 	static bool	WSAStart();
 	static void	CleanUp();
 
